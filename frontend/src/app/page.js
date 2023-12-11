@@ -1,13 +1,13 @@
 import Image from 'next/image'
 import styles from './page.module.css'
-import Signin from '../Screens/Signup/signin'
-import Signup from '../Screens/Login/signup'
+import Signin from '../Screens/Signin/signin'
+import Signup from '../Screens/Signup/signup'
 import Home from '../Screens/Home/home'
 
-export default function page() {
+export default function DefaultPage() {
   return (
     <main className={styles.main}>
-      <Home />
+      <Signup />
     </main>
   )
 }
