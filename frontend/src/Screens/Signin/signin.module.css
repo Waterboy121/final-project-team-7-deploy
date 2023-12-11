@@ -66,6 +66,16 @@
     background-color: #FFB703;
 }
 
+.submit:hover {
+    background-color: #c99000;
+    border-color: #c99000;
+}
+
+.submit:active {
+    background-color: #8e6600;
+    border-color: #8e6600;
+}
+
 .splash {
     display: flex;
     flex: 1;
