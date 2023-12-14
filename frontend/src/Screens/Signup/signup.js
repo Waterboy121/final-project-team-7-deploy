@@ -5,10 +5,10 @@ import React from "react";
 import logo from "../../assets/logo.png";
 import splash from "../../assets/signupSplash.png";
 import styles from "./signup.module.css";
-import { useRouter } from 'next/navigation'
+import { useRouter } from "next/navigation";
 
 export default function Signup() {
-	const router = useRouter()
+	const router = useRouter();
 
 	const [registerData, setRegisterData] = React.useState({
 		email: "",
@@ -39,7 +39,7 @@ export default function Signup() {
 		}
 
 		console.log("User registered:", registerData);
-		router.push('/home')
+		router.push("/home");
 	};
 
 	return (
@@ -53,12 +53,7 @@ export default function Signup() {
 				/>
 			</div>
 			<div className={styles.form}>
-				<Image
-					className={styles.logo}
-					src={logo}
-					alt="app logo"
-					priority
-				/>
+				<Image className={styles.logo} src={logo} alt="app logo" priority />
 				<h1 className={styles.title}>Sign-Up</h1>
 				<div className={styles.field}>
 					<label className={styles.label}>Email</label>
@@ -108,7 +103,9 @@ export default function Signup() {
 					{" "}
 					Submit{" "}
 				</button>
-				<span style={{ marginTop: "20px", fontSize: ".75rem" }}>
+				<span
+					style={{ marginTop: "20px", fontSize: ".75rem", color: "#FFFFFF" }}
+				>
 					{" "}
 					Already Have An Account?{" "}
 					<span
