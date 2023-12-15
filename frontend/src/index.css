@@ -1,0 +1,14 @@
+body {
+  background: linear-gradient(
+    329deg,
+    rgba(77, 40, 99, 100) 20%,
+    rgba(0, 0, 0, 100) 80%
+  );
+  height: 100vh;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
