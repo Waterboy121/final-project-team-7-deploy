@@ -1,0 +1,105 @@
+.form-signin {
+  width: 400px;
+  background-color: rgba(255, 255, 255, 0.13);
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  padding: 16px 35px;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-signup {
+  width: 400px;
+  background-color: rgba(255, 255, 255, 0.13);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  padding: 16px 35px;
+}
+
+.form-profile {
+  width: 400px;
+  background-color: rgba(255, 255, 255, 0.13);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  padding: 16px 35px;
+}
+
+form * {
+  font-family: "Poppins", sans-serif;
+  color: white;
+  letter-spacing: 0.5px;
+  outline: none;
+  border: none;
+}
+form h2 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  text-align: center;
+  color: rgba(255, 183, 3, 1);
+}
+
+label {
+  display: block;
+  margin-top: 16px;
+  font-size: 16px;
+  font-weight: 500;
+}
+input {
+  display: block;
+  height: 48px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.07);
+  border-radius: 3px;
+  padding: 0 10px;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 400;
+}
+::placeholder {
+  color: rgb(229, 229, 229);
+}
+button {
+  margin-top: 28px;
+  width: 100%;
+  background-color: rgba(255, 183, 3, 1);
+  color: black;
+  padding: 15px 0;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: rgb(218, 156, 0);
+}
+.text {
+  display: inline;
+  margin-right: 8px;
+  font-size: 14px;
+  color: white;
+  font-size: 12px;
+}
+
+.link {
+  color: rgba(255, 183, 3, 1);
+  text-decoration: underline;
+  font-size: 14px;
+  display: inline;
+}
+
+.con {
+  margin-top: 16px;
+}

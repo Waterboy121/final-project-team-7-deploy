@@ -1,0 +1,521 @@
+/*!*******************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[7].use[3]!./src/app/page.module.css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************/
+.page_main__GlU4n {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to left, #4D2863, black);;
+}
+
+.page_description__86bsR {
+  display: inherit;
+  justify-content: inherit;
+  align-items: inherit;
+  font-size: 0.85rem;
+  max-width: var(--max-width);
+  width: 100%;
+  z-index: 2;
+  font-family: var(--font-mono);
+}
+
+.page_description__86bsR a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.page_description__86bsR p {
+  position: relative;
+  margin: 0;
+  padding: 1rem;
+  background-color: rgba(var(--callout-rgb), 0.5);
+  border: 1px solid rgba(var(--callout-border-rgb), 0.3);
+  border-radius: var(--border-radius);
+}
+
+.page_code__9lUUd {
+  font-weight: 700;
+  font-family: var(--font-mono);
+}
+
+.page_grid__f5Kdy {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(25%, auto));
+  max-width: 100%;
+  width: var(--max-width);
+}
+
+.page_card__QV0Om {
+  padding: 1rem 1.2rem;
+  border-radius: var(--border-radius);
+  background: rgba(var(--card-rgb), 0);
+  border: 1px solid rgba(var(--card-border-rgb), 0);
+  transition: background 200ms, border 200ms;
+}
+
+.page_card__QV0Om span {
+  display: inline-block;
+  transition: transform 200ms;
+}
+
+.page_card__QV0Om h2 {
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+}
+
+.page_card__QV0Om p {
+  margin: 0;
+  opacity: 0.6;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  max-width: 30ch;
+}
+
+.page_center__5oHG7 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 4rem 0;
+}
+
+.page_center__5oHG7::before {
+  background: var(--secondary-glow);
+  border-radius: 50%;
+  width: 480px;
+  height: 360px;
+  margin-left: -400px;
+}
+
+.page_center__5oHG7::after {
+  background: var(--primary-glow);
+  width: 240px;
+  height: 180px;
+  z-index: -1;
+}
+
+.page_center__5oHG7::before,
+.page_center__5oHG7::after {
+  content: '';
+  left: 50%;
+  position: absolute;
+  filter: blur(45px);
+  transform: translateZ(0);
+}
+
+.page_logo__7fc9l {
+  position: relative;
+}
+/* Enable hover only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+  .page_card__QV0Om:hover {
+    background: rgba(var(--card-rgb), 0.1);
+    border: 1px solid rgba(var(--card-border-rgb), 0.15);
+  }
+
+  .page_card__QV0Om:hover span {
+    transform: translateX(4px);
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .page_card__QV0Om:hover span {
+    transform: none;
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .page_content__kDoxQ {
+    padding: 4rem;
+  }
+
+  .page_grid__f5Kdy {
+    grid-template-columns: 1fr;
+    margin-bottom: 120px;
+    max-width: 320px;
+    text-align: center;
+  }
+
+  .page_card__QV0Om {
+    padding: 1rem 2.5rem;
+  }
+
+  .page_card__QV0Om h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .page_center__5oHG7 {
+    padding: 8rem 0 6rem;
+  }
+
+  .page_center__5oHG7::before {
+    transform: none;
+    height: 300px;
+  }
+
+  .page_description__86bsR {
+    font-size: 0.8rem;
+  }
+
+  .page_description__86bsR a {
+    padding: 1rem;
+  }
+
+  .page_description__86bsR p,
+  .page_description__86bsR div {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+  }
+
+  .page_description__86bsR p {
+    align-items: center;
+    inset: 0 0 auto;
+    padding: 2rem 1rem 1.4rem;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid rgba(var(--callout-border-rgb), 0.25);
+    background: linear-gradient(
+      to bottom,
+      rgba(var(--background-start-rgb), 1),
+      rgba(var(--callout-rgb), 0.5)
+    );
+    background-clip: padding-box;
+    -webkit-backdrop-filter: blur(24px);
+            backdrop-filter: blur(24px);
+  }
+
+  .page_description__86bsR div {
+    align-items: flex-end;
+    pointer-events: none;
+    inset: auto 0 0;
+    padding: 2rem;
+    height: 200px;
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgb(var(--background-end-rgb)) 40%
+    );
+    z-index: 1;
+  }
+}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {
+  .page_grid__f5Kdy {
+    grid-template-columns: repeat(2, 50%);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .page_vercelLogo__rOY_u {
+    filter: invert(1);
+  }
+
+  .page_logo__7fc9l {
+    filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
+  }
+}
+
+@keyframes page_rotate__durgN {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+/*!****************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[7].use[3]!./src/Screens/Home/home.module.css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************/
+.home_container__pSg9I {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 90vw;
+    padding-top: 25px;
+}
+
+.home_header__I9U3t {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.home_body__JtJj_ {
+    display: flex;
+    flex-direction: row;
+    height: 80%;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.home_toolbar__0RM1_ {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-right: 1px solid grey;
+    width: 20%;
+    gap: 50px;
+}
+
+.home_toolbarGroup1__HKJAA {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.home_toolbarGroup2__HtPxn {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.home_optionHeader__ApoU8 {
+    font-size: 1.75rem;
+    margin-bottom: 10px;
+    color: #E8E8E8;
+}
+
+.home_option__cnQLc {
+    display: flex;
+    font-size: 1.25rem;
+    color: #9B9B9B;
+    align-items: center;
+    gap: 10px;
+}
+
+.home_main__Kwltf {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1;
+    height: 100%;
+    padding-left: 50px;
+}
+
+.home_icon__ViS5p {
+    position: relative;
+    left:40px;
+    top: 16px;
+    transform: translateY(-50%);
+}
+
+.home_search__khqA7 {
+    width: 60%;
+    height: 45px;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 40px;
+    padding-left: 50px;
+    font-size: 1rem;
+    color: white;
+}
+/*!********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[7].use[3]!./src/Screens/Signin/signin.module.css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************/
+.signin_container__D_uj1 {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+	height: 100vh;
+	width: 100vw;
+}
+
+.signin_form__PEebx {
+	display: flex;
+	flex: 1 1;
+	height: 80%;
+	margin: 3rem;
+	flex-direction: column;
+	align-items: center;
+	gap: 30px;
+}
+
+.signin_logo__wjqut {
+	height: 50px;
+	width: 170px;
+	margin-bottom: 10%;
+}
+
+.signin_title__Dt9PV {
+	width: 75%;
+}
+
+.signin_label__b_NkP {
+	width: 75%;
+	margin-bottom: 10px;
+	font-size: 0.75rem;
+	color: white;
+}
+
+.signin_field__Rw2oR {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	align-items: center;
+}
+
+.signin_input__Y32lU {
+	height: 45px;
+	width: 75%;
+	border: 1px solid white;
+	background-color: transparent;
+	padding-left: 15px;
+	border-radius: 5px;
+	color: white;
+}
+
+.signin_forgot__XHA_p {
+	width: 75%;
+	text-align: end;
+	-webkit-text-decoration-line: underline;
+	        text-decoration-line: underline;
+	font-size: 0.75rem;
+	color: #ffb703;
+}
+
+.signin_submit__mdUMd {
+	height: 40px;
+	width: 120px;
+	border-radius: 5px;
+	color: black;
+	font-weight: bold;
+	border: 1px solid #ffb703;
+	background-color: #ffb703;
+}
+
+.signin_submit__mdUMd:hover {
+	background-color: #c99000;
+	border-color: #c99000;
+}
+
+.signin_submit__mdUMd:active {
+	background-color: #8e6600;
+	border-color: #8e6600;
+}
+
+.signin_splash__H77_5 {
+	display: flex;
+	flex: 1 1;
+	margin: 3rem;
+	height: 90%;
+}
+
+.signin_splashImg__B8svs {
+	display: flex;
+	flex: 1 1;
+	height: 100%;
+}
+
+/*!********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[7].use[3]!./src/Screens/Signup/signup.module.css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************/
+.signup_container__ka_ZW {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-evenly;
+	height: 100vh;
+	width: 100vw;
+}
+
+.signup_form__6TEZJ {
+	display: flex;
+	width: 35%;
+	height: 80%;
+	margin: 3rem;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+}
+
+.signup_logo__XJadA {
+	height: 50px;
+	width: 170px;
+	margin-bottom: 5%;
+}
+
+.signup_title__hK8Bj {
+	width: 75%;
+	color: white;
+}
+
+.signup_label__Pzwu_ {
+	width: 75%;
+	margin-bottom: 10px;
+	font-size: 0.75rem;
+	color: white;
+}
+
+.signup_field__Ni3_s {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	align-items: center;
+}
+
+.signup_input___CHCo {
+	height: 40px;
+	width: 75%;
+	border: 1px solid white;
+	background-color: transparent;
+	padding-left: 15px;
+	border-radius: 5px;
+	color: white;
+}
+
+.signup_forgot__FWFl_ {
+	width: 75%;
+	text-align: end;
+	-webkit-text-decoration-line: underline;
+	        text-decoration-line: underline;
+	font-size: 0.75rem;
+}
+
+.signup_submit__uey7R {
+	height: 40px;
+	width: 120px;
+	border-radius: 5px;
+	color: black;
+	font-weight: bold;
+	border: 1px solid #ffb703;
+	background-color: #ffb703;
+	margin-top: 15px;
+	cursor: pointer;
+}
+
+.signup_submit__uey7R:hover {
+	background-color: #c99000;
+	border-color: #c99000;
+}
+
+.signup_submit__uey7R:active {
+	background-color: #8e6600;
+	border-color: #8e6600;
+}
+
+.signup_splash__OiPf7 {
+	display: flex;
+	width: 35%;
+	margin: 3rem;
+	height: 90%;
+}
+
+.signup_splashImg__z8uyI {
+	display: flex;
+	flex: 1 1;
+	height: 100%;
+}
+
