@@ -6,6 +6,7 @@ dotemv.config();
 import cookieParser from "cookie-parser";
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 import connectDB from "./config/db.js";
+
 const port = process.env.PORT || 3000;
 
 connectDB();
