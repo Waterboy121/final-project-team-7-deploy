@@ -1,8 +1,8 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { useLogoutMutation } from "../slices/usersApiSlice";
-import { logout } from "../slices/authSlice";
+import { useLogoutMutation } from "../redux/slices/usersApiSlice";
+import { logout } from "../redux/slices/authSlice";
 import "./Header.css";
 
 const Header = () => {

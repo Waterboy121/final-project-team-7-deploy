@@ -3,17 +3,33 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import logo from "../../assets/logo.png";
+import { useDispatch, useSelector } from "react-redux";
+import { useSigninMutation } from "../../redux/slices/usersApiSlice";
+import { setCredentials } from "../../redux/slices/authSlice";
 import splash from "../../assets/signinSplash.png";
 import styles from "./signin.module.css";
 import { useRouter } from 'next/navigation'
+import {toast} from "react-toastify";
 
 export default function Signin() {
 	const router = useRouter()
+	const dispatch = useDispatch();
+	const [signin, { isLoading }] = useSigninMutation();
 
 	const [loginData, setLoginData] = React.useState({
 		email: "",
 		password: "",
 	});
+
+	const userInfo = useSelector((state) => {
+		return state.auth.userInfo; // Return the userInfo property
+	  });
+
+	React.useEffect(() => {
+	  if (userInfo) {
+		router.push('/home');
+	  }
+	}, [userInfo]);
 
 	const onChange = (event) => {
 		setLoginData({
@@ -22,10 +38,15 @@ export default function Signin() {
 		});
 	};
 
-	const onSubmit = (event) => {
+	const onSubmit = async (event) => {
 		event.preventDefault();
-		console.log("User submitted:", loginData);
-		router.push('/home')
+		try {
+			const res = await signin({ email: loginData.email, password: loginData.password }).unwrap();
+			dispatch(setCredentials({ ...res }));
+			router.push('/home');
+		  } catch (err) {
+			toast.error(err?.data.message || err.error);
+		  }
 	};
 
 	return (

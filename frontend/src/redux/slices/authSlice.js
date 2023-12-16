@@ -1,8 +1,9 @@
+'use client';
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  userInfo: localStorage.getItem("userInfo")
-    ? JSON.parse(localStorage.getItem("userInfo"))
+  userInfo: typeof window !== "undefined"
+    ? (localStorage.getItem("userInfo") ? JSON.parse(localStorage.getItem("userInfo")) : null)
     : null,
 };
 
@@ -22,5 +23,4 @@ const authSlice = createSlice({
 });
 
 export const { setCredentials, logout } = authSlice.actions;
-
-export default authSlice.reducer;
+export default authSlice.reducer

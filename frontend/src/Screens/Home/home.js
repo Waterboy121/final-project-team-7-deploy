@@ -6,8 +6,26 @@ import { FaBeer } from "react-icons/fa";
 import { HiOutlineHome } from "react-icons/hi";
 import { IoIosPlayCircle, IoIosSettings, IoIosExit } from "react-icons/io";
 import { HiMagnifyingGlass } from "react-icons/hi2";
+import { useSelector, useDispatch } from "react-redux";
+import { useLogoutMutation } from "../../redux/slices/usersApiSlice";
+import { logout } from "../../redux/slices/authSlice";
 
 export default function Home() {
+	const { userInfo } = useSelector((state) => state.auth);
+
+	const dispatch = useDispatch();
+	const [logoutApiCall] = useLogoutMutation();
+
+	const logoutHandler = async () => {
+		try {
+		  await logoutApiCall().unwrap();
+		  dispatch(logout());
+		  navigate("/");
+		} catch (err) {
+		  console.log(err);
+		}
+	  };
+
 	return (
 		<div className={styles.container}>
 			<div className={styles.header}>
@@ -50,7 +68,7 @@ export default function Home() {
 							{" "}
 							<IoIosSettings /> Settings{" "}
 						</p>
-						<p className={styles.option} style={{ color: "#FF0000" }}>
+						<p onClick={logoutHandler} className={styles.option} style={{ color: "#FF0000" }}>
 							{" "}
 							<IoIosExit /> Log out
 						</p>
