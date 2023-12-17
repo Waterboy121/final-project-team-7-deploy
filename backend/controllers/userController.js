@@ -102,11 +102,6 @@ const updateUserProfile = asyncHandler(async (req, res) => {
 
 const searchHandler = asyncHandler(async (req, res) => {
 	var Client_ID = "b22d93d0ae984f7f859da670d656b24a";
-	console.log("Hi");
-	console.log("Hi");
-	console.log("Hi");
-	console.log("Hi");
-	console.log("Hi");
 
 	var Client_Secret = "cd35cb20f7fb45ba97e5e8684f669a79";
 	const generateToken = async () => {
@@ -126,7 +121,6 @@ const searchHandler = asyncHandler(async (req, res) => {
 				authParameters
 			);
 			const data = await result.json();
-			console.log(data);
 			return data.access_token;
 		} catch (error) {
 			console.error("Error:", error);
@@ -163,10 +157,6 @@ const searchHandler = asyncHandler(async (req, res) => {
 		res.status(500).json({ error: "Internal server error" });
 	}
 });
-
-// app.listen(PORT, () => {
-// 	console.log(`Server is running on http://localhost:${PORT}`);
-// });
 
 export {
 	authUser,
