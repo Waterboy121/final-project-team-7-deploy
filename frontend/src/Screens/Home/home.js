@@ -1,3 +1,4 @@
+"use client";
 import styles from "./home.module.css";
 import Image from "next/image";
 import logo from "../../assets/logo.png";
@@ -8,23 +9,34 @@ import { IoIosPlayCircle, IoIosSettings, IoIosExit } from "react-icons/io";
 import { HiMagnifyingGlass } from "react-icons/hi2";
 import { useSelector, useDispatch } from "react-redux";
 import { useLogoutMutation } from "../../redux/slices/usersApiSlice";
-import { logout } from "../../redux/slices/authSlice";
+//import { logout } from "../../redux/slices/authSlice";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
-	const { userInfo } = useSelector((state) => state.auth);
-
+	const { userInfo } = useSelector((state) => {
+		console.log(state);
+		return state.auth;
+	});
+	const router = useRouter();
 	const dispatch = useDispatch();
-	const [logoutApiCall] = useLogoutMutation();
+	const [logout, { isLoading }] = useLogoutMutation();
+	//const [signin, { isLoading }] = useSigninMutation();
 
 	const logoutHandler = async () => {
-		try {
-		  await logoutApiCall().unwrap();
-		  dispatch(logout());
-		  navigate("/");
-		} catch (err) {
-		  console.log(err);
-		}
-	  };
+		// try {
+		// 	//await logout().unwrap();
+		// 	await dispatch(logout()).unwrap();
+		// 	router.push("/");
+		// 	console.log("kill me");
+		// } catch (err) {
+		// 	console.log(err);
+		// }
+		await logout()
+			.then(() => {
+				router.push("/");
+			})
+			.catch((err) => console.log(err));
+	};
 
 	return (
 		<div className={styles.container}>
@@ -46,7 +58,7 @@ export default function Home() {
 					/>
 					<p style={{ fontWeight: "bold", color: "#FFFFFF" }}>
 						{" "}
-						Albert Willaims
+						{userInfo.userName}
 					</p>
 				</span>
 			</div>
@@ -68,7 +80,11 @@ export default function Home() {
 							{" "}
 							<IoIosSettings /> Settings{" "}
 						</p>
-						<p onClick={logoutHandler} className={styles.option} style={{ color: "#FF0000" }}>
+						<p
+							onClick={logoutHandler}
+							className={styles.option}
+							style={{ color: "#FF0000" }}
+						>
 							{" "}
 							<IoIosExit /> Log out
 						</p>

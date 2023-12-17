@@ -79,12 +79,7 @@ export default function Signup() {
 				/>
 			</div>
 			<div className={styles.form}>
-				<Image
-					className={styles.logo}
-					src={logo}
-					alt="app logo"
-					priority
-				/>
+				<Image className={styles.logo} src={logo} alt="app logo" priority />
 				<h1 className={styles.title}>Sign-Up</h1>
 				<div className={styles.field}>
 					<label className={styles.label}>Email</label>

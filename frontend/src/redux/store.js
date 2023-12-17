@@ -7,9 +7,11 @@ import { userApiSlice } from "./slices/usersApiSlice";
 export const store = configureStore({
 	reducer: {
 		auth: authReducer,
-        api: apiSlice,
-        user: userApiSlice
+		api: apiSlice,
+		user: userApiSlice,
 	},
+	middleware: (getDefaultMiddleware) =>
+		getDefaultMiddleware().concat(userApiSlice.middleware),
 });
 
 export const RootState = store.getState;

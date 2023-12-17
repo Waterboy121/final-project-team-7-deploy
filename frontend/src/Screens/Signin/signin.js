@@ -8,11 +8,11 @@ import { useSigninMutation } from "../../redux/slices/usersApiSlice";
 import { setCredentials } from "../../redux/slices/authSlice";
 import splash from "../../assets/signinSplash.png";
 import styles from "./signin.module.css";
-import { useRouter } from 'next/navigation'
-import {toast} from "react-toastify";
+import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
 
 export default function Signin() {
-	const router = useRouter()
+	const router = useRouter();
 	const dispatch = useDispatch();
 	const [signin, { isLoading }] = useSigninMutation();
 
@@ -23,13 +23,13 @@ export default function Signin() {
 
 	const userInfo = useSelector((state) => {
 		return state.auth.userInfo; // Return the userInfo property
-	  });
+	});
 
-	React.useEffect(() => {
-	  if (userInfo) {
-		router.push('/home');
-	  }
-	}, [userInfo]);
+	// React.useEffect(() => {
+	// 	if (userInfo) {
+	// 		router.push("/home");
+	// 	}
+	// }, [userInfo]);
 
 	const onChange = (event) => {
 		setLoginData({
@@ -41,23 +41,23 @@ export default function Signin() {
 	const onSubmit = async (event) => {
 		event.preventDefault();
 		try {
-			const res = await signin({ email: loginData.email, password: loginData.password }).unwrap();
+			const res = await signin({
+				email: loginData.email,
+				password: loginData.password,
+			}).unwrap();
 			dispatch(setCredentials({ ...res }));
-			router.push('/home');
-		  } catch (err) {
+			router.push("/home");
+		} catch (err) {
+			console.log("yo");
+			console.log(err);
 			toast.error(err?.data.message || err.error);
-		  }
+		}
 	};
 
 	return (
 		<div className={styles.container}>
 			<div className={styles.form}>
-				<Image
-					className={styles.logo}
-					src={logo}
-					alt="app logo"
-					priority
-				/>
+				<Image className={styles.logo} src={logo} alt="app logo" priority />
 				<h1 className={styles.title}>Sign-In</h1>
 				<div className={styles.field}>
 					<label className={styles.label}>Email</label>
@@ -81,8 +81,14 @@ export default function Signin() {
 						placeholder="***************"
 					/>
 				</div>
-				<p onClick={() => alert("too bad")} className={styles.forgot}> Forgot Password? </p>
-				<button onClick={onSubmit} className={styles.submit}> Submit </button>
+				<p onClick={() => alert("too bad")} className={styles.forgot}>
+					{" "}
+					Forgot Password?{" "}
+				</p>
+				<button onClick={onSubmit} className={styles.submit}>
+					{" "}
+					Submit{" "}
+				</button>
 				<span style={{ marginTop: "20px", fontSize: ".75rem" }}>
 					{" "}
 					Don't Have An Account?{" "}
