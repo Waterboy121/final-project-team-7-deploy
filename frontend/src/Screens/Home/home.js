@@ -9,10 +9,20 @@ import { IoIosPlayCircle, IoIosSettings, IoIosExit } from "react-icons/io";
 import { HiMagnifyingGlass } from "react-icons/hi2";
 import { useSelector, useDispatch } from "react-redux";
 import { useLogoutMutation } from "../../redux/slices/usersApiSlice";
+import { useState, useEffect } from "react";
+import {
+	Container,
+	InputGroup,
+	FormControl,
+	Button,
+	ListGroup,
+} from "react-bootstrap";
 //import { logout } from "../../redux/slices/authSlice";
 import { useRouter } from "next/navigation";
+import React from "react";
 
 export default function Home() {
+	const [track, setTrack] = useState([]);
 	const { userInfo } = useSelector((state) => {
 		console.log(state);
 		return state.auth;
@@ -21,6 +31,10 @@ export default function Home() {
 	const dispatch = useDispatch();
 	const [logout, { isLoading }] = useLogoutMutation();
 	//const [signin, { isLoading }] = useSigninMutation();
+
+	React.useEffect(() => {
+		console.log(track);
+	}, [track]);
 
 	const logoutHandler = async () => {
 		// try {
@@ -36,6 +50,25 @@ export default function Home() {
 				router.push("/");
 			})
 			.catch((err) => console.log(err));
+	};
+
+	const search = async () => {
+		let input = document.getElementById("search").value;
+		console.log(input);
+		await fetch("http://localhost:8000/api/users/search", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				searchInput: input,
+			}),
+		})
+			.then((response) => response.json())
+			.then((data) => setTrack(data))
+			.catch((error) => {
+				console.error("Error:", error);
+			});
 	};
 
 	return (
@@ -100,9 +133,46 @@ export default function Home() {
 					>
 						<p className={styles.icon}>
 							{" "}
-							<HiMagnifyingGlass size={"1.5em"} color="gray" />{" "}
+							<HiMagnifyingGlass
+								size={"1.5em"}
+								color="gray"
+								onClick={search}
+							/>{" "}
 						</p>
-						<input className={styles.search} placeholder="Search" />
+						<input
+							id="search"
+							className={styles.search}
+							placeholder="Search"
+							onKeyPress={(e) => {
+								if (e.key == "Enter") {
+									search();
+								}
+							}}
+						/>
+						<Container>
+							<ListGroup variant="flush">
+								{track.map((track, i) => {
+									return (
+										console.log(track.name, track.id),
+										(
+											<ListGroup.Item>
+												Song: {track.name} Artist: {track.artists[0].name} Id:{" "}
+												{track.id}
+												<Button
+													size="sm"
+													variant="outline-dark"
+													onClick={function () {
+														return track.id;
+													}}
+												>
+													Like
+												</Button>
+											</ListGroup.Item>
+										)
+									);
+								})}
+							</ListGroup>
+						</Container>
 					</div>
 				</div>
 			</div>
