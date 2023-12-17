@@ -101,7 +101,41 @@ const updateUserProfile = asyncHandler(async (req, res) => {
 });
 
 const searchHandler = asyncHandler(async (req, res) => {
-	const { searchInput, accessToken } = req.body;
+	var Client_ID = "b22d93d0ae984f7f859da670d656b24a";
+	console.log("Hi");
+	console.log("Hi");
+	console.log("Hi");
+	console.log("Hi");
+	console.log("Hi");
+
+	var Client_Secret = "cd35cb20f7fb45ba97e5e8684f669a79";
+	const generateToken = async () => {
+		var authParameters = {
+			method: "POST",
+			headers: { "Content-Type": "application/x-www-form-urlencoded" },
+			body:
+				"grant_type=client_credentials&client_id=" +
+				Client_ID +
+				"&client_secret=" +
+				Client_Secret,
+		};
+
+		try {
+			const result = await fetch(
+				"https://accounts.spotify.com/api/token",
+				authParameters
+			);
+			const data = await result.json();
+			console.log(data);
+			return data.access_token;
+		} catch (error) {
+			console.error("Error:", error);
+		}
+	};
+
+	let accessToken = await generateToken();
+
+	const { searchInput } = req.body;
 
 	// Check if the required parameters are provided
 	if (!searchInput || !accessToken) {
