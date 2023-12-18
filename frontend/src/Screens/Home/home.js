@@ -60,16 +60,9 @@ export default function Home() {
 	}, [track]);
 
 	const logoutHandler = async () => {
-		// try {
-		// 	//await logout().unwrap();
-		// 	await dispatch(logout()).unwrap();
-		// 	router.push("/");
-		// 	console.log("kill me");
-		// } catch (err) {
-		// 	console.log(err);
-		// }
-		await logout()
+		await logoutApiCall()
 			.then(() => {
+				dispatch(logout());
 				router.push("/");
 			})
 			.catch((err) => console.log(err));
