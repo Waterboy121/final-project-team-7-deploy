@@ -31,6 +31,13 @@ export const userApiSlice = apiSlice.injectEndpoints({
         body: data,
       }),
     }),
+    fetchPlaylist: builder.mutation({
+			query: (data) => ({
+				url: `${USERS_URL}/playlist`,
+				method: "POST",
+				body: data,
+			}),
+		}),
   }),
 });
 
@@ -39,4 +46,5 @@ export const {
   useLogoutMutation,
   useSignupMutation,
   useUpdateUserMutation,
+  useFetchPlaylistMutation
 } = userApiSlice;

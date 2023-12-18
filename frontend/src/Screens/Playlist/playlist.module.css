@@ -1,0 +1,122 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 90vw;
+    padding-top: 25px;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.body {
+    display: flex;
+    flex-direction: row;
+    height: 80%;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.toolbar {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-right: 1px solid grey;
+    width: 20%;
+    gap: 50px;
+}
+
+.toolbarGroup1 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toolbarGroup2 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.optionHeader {
+    font-size: 1.75rem;
+    margin-bottom: 10px;
+    color: #E8E8E8;
+}
+
+.option {
+    display: flex;
+    font-size: 1.25rem;
+    color: #9B9B9B;
+    align-items: center;
+    gap: 10px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+    padding-left: 50px;
+}
+
+.icon {
+    position: relative;
+    left: 40px;
+    top: 16px;
+    transform: translateY(-50%);
+}
+
+.search {
+    width: 60%;
+    height: 45px;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 40px;
+    padding-left: 50px;
+    font-size: 1rem;
+    color: white;
+}
+
+.songs {
+    height: 100%;
+    padding-top: 5px;
+}
+
+.song {
+    display: flex;
+    flex: 1;
+    height: 80px;
+    align-items: center;
+    padding: 15px;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.songImg {
+    border-radius: 99%;
+}
+
+.button {
+    width: 50px;
+    height: 25px;
+    background-color: darkorchid;
+    color: white;
+    border: 1px solid transparent;
+    border-radius: 50px;
+}
+
+.button:hover {
+    background-color: rgb(105, 34, 141);
+}
+
+.button:active {
+    background-color: rgb(67, 20, 91);
+}

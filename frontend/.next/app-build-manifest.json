@@ -18,11 +18,11 @@
       "static/css/app/home/page.css",
       "static/chunks/app/home/page.js"
     ],
-    "/signup/page": [
+    "/playlist/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/signup/page.css",
-      "static/chunks/app/signup/page.js"
+      "static/css/app/playlist/page.css",
+      "static/chunks/app/playlist/page.js"
     ]
   }
 }

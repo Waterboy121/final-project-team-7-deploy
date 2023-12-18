@@ -8,9 +8,11 @@ import {
   getUserProfile,
   updateUserProfile,
   searchHandler,
+  playlistHandler,
 } from "../controllers/userController.js";
 
 import { protect } from "../middleware/authMiddleware.js";
+router.post("/playlist", playlistHandler)
 router.post("/search", searchHandler);
 router.post("/auth", authUser);
 router.post("/", registerUser);
