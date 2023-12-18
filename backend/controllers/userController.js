@@ -194,7 +194,8 @@ const playlistHandler = asyncHandler(async (req, res) => {
 	try {
 		const fetchedPlaylist = []
 
-		for (let id in playlist) {
+		for (let id of playlist) {
+      console.log("PLAYYY", playlist)
 			const searchParameters = {
 			headers: {
 				"Content-Type": "application/json",
@@ -202,19 +203,22 @@ const playlistHandler = asyncHandler(async (req, res) => {
 			},
 		};
 
+    console.error("TEST:", `https://api.spotify.com/v1/tracks/${id}?market=ES`)
+
 		// Make the Spotify API search request
 		const response = await axios.get(
 			`https://api.spotify.com/v1/tracks/${id}?market=ES`,
 			searchParameters
 		);
 
-		fetchedPlaylist.push(response.data)
-
+    if (response.data) {
+      fetchedPlaylist.push(response.data)
+    }
 		}
 		// Send the response back to the client
 		res.json(fetchedPlaylist);
 	} catch (error) {
-		console.error("Error making Spotify API call:", error);
+		console.log("PLAYYY", playlist)
 		res.status(500).json({ error: "Internal server error" });
 	}
 

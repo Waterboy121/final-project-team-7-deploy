@@ -8,7 +8,7 @@ import { HiOutlineHome } from "react-icons/hi";
 import { IoIosPlayCircle, IoIosSettings, IoIosExit } from "react-icons/io";
 import { HiMagnifyingGlass } from "react-icons/hi2";
 import { useSelector, useDispatch } from "react-redux";
-import { useFetchPlaylistMutation } from "../../redux/slices/usersApiSlice";
+import { useFetchPlaylistMutation, useLogoutMutation } from "../../redux/slices/usersApiSlice";
 import { useState, useEffect } from "react";
 import {
 	Container,
@@ -20,9 +20,18 @@ import {
 //import { logout } from "../../redux/slices/authSlice";
 import { useRouter } from "next/navigation";
 import React from "react";
+import { logout } from "../../redux/slices/authSlice";
 
 export default function Playlist() {
+	const [tracks, setTracks] = useState([]);
     const [fetchPlaylist, { isLoading }] = useFetchPlaylistMutation();
+	const [logoutApiCall] = useLogoutMutation();
+	const dispatch = useDispatch();
+		const router = useRouter();
+
+		useEffect(() => {
+			console.log("TRACKS:", tracks)
+		}, [tracks])
 
 const { userInfo } = useSelector((state) => {
         console.log(state);
@@ -32,29 +41,37 @@ const { userInfo } = useSelector((state) => {
     const logoutHandler = async () => {
         await logoutApiCall()
             .then(() => {
+				router.push("/");
                 dispatch(logout());
-                router.push("/");
             })
             .catch((err) => console.log(err));
     };
 
-    const [data, setData] = useState([]);
     const playlist = userInfo?.playlist || [];
 
     useEffect(() => {
     const fetchDataForInputs = async () => {
       try {
         const results = await fetchPlaylist({playlist: userInfo.playlist}).unwrap()
-        dispatch(setData([...results.data]))
+        setTracks([...results])
       } catch (error) {
         console.error('Error fetching data:', error);
       }
     };
 
     fetchDataForInputs();
-  }, [playlist]);
+  }, []);
 
-    
+function formatMillisecondsToMinutes(milliseconds) {
+		const totalSeconds = Math.floor(milliseconds / 1000);
+		const minutes = Math.floor(totalSeconds / 60);
+		const seconds = totalSeconds % 60;
+
+		// Use String.padStart to ensure that single-digit seconds are formatted as "0X"
+		const formattedSeconds = String(seconds).padStart(2, "0");
+
+		return `${minutes}:${formattedSeconds} mins`;
+	}
 /*
 
   useEffect(() => {
@@ -157,7 +174,7 @@ const processArray = async () => {
 					/>
 					<p style={{ fontWeight: "bold", color: "#FFFFFF" }}>
 						{" "}
-						{userInfo.userName}
+						{userInfo?.userName}
 					</p>
 				</span>
 			</div>
@@ -197,15 +214,40 @@ const processArray = async () => {
 							alignItems: "center",
 						}}
 					>
-                        <Container>
-							<ListGroup variant="flush">
-								<ul>
-                        {data.map((item, index) => (
-                        <li key={index}>{/* Render your data here, adjust accordingly */}</li>
-                        ))}
-                    </ul>
-							</ListGroup>
-						</Container>
+                        <div className={styles.songs}>
+						{tracks.map((track, i) => {
+							return (
+								console.log(track.name, track.id),
+								(
+									<div className={styles.song}>
+										<Image
+											className={styles.songImg}
+											src={track.album.images[2].url}
+											alt="app logo"
+											priority
+											width={70}
+											height={70}
+										/>
+										{track.name} by {track.artists[0].name}
+										{" — "}
+										{track.album.name} (
+										{formatMillisecondsToMinutes(track.duration_ms)})
+										<button
+											className={styles.button}
+											size="sm"
+											variant="outline-dark"
+											onClick={function () {
+												addSongToPlaylist(track.id);
+												return track.id;
+											}}
+										>
+											Add
+										</button>
+									</div>
+								)
+							);
+						})}
+					</div>
 						
 
 

@@ -1,10 +1,3 @@
 {
-  "/page": "app/page.js",
-<<<<<<< HEAD
-  "/home/page": "app/home/page.js",
   "/playlist/page": "app/playlist/page.js"
-=======
-  "/settings/page": "app/settings/page.js",
-  "/home/page": "app/home/page.js"
->>>>>>> 288f8bcb7e4f08cf8cbe72ee90f09078ba811e93
 }
