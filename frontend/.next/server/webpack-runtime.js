@@ -130,7 +130,11 @@
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
+<<<<<<< HEAD
 /******/ 		__webpack_require__.h = () => ("b4b58e90efc650f7")
+=======
+/******/ 		__webpack_require__.h = () => ("832e577e1c4c1ff7")
+>>>>>>> 6e59b81 (Fixed logout, and implemented settings)
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
