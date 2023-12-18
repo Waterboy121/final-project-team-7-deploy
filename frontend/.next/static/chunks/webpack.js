@@ -192,11 +192,7 @@
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	!function() {
-<<<<<<< HEAD
-/******/ 		__webpack_require__.h = function() { return "46cf655f1beb9ba0"; }
-=======
-/******/ 		__webpack_require__.h = function() { return "1099d429cdd2d186"; }
->>>>>>> 6e59b81 (Fixed logout, and implemented settings)
+/******/ 		__webpack_require__.h = function() { return "c101fe275f0a7181"; }
 /******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
