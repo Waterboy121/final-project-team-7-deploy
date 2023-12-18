@@ -121,7 +121,7 @@ export default function Home() {
 					/>
 					<div style={{ fontWeight: "bold", color: "#FFFFFF" }}>
 						{" "}
-						{userInfo?.userName}
+						{userInfo.userName ? userInfo.userName : "Username not found"}
 					</div>
 				</div>
 			</div>

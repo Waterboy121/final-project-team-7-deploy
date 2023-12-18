@@ -9,6 +9,7 @@
     "/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
+<<<<<<< HEAD
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
@@ -23,6 +24,10 @@
       "static/chunks/main-app.js",
       "static/css/app/playlist/page.css",
       "static/chunks/app/playlist/page.js"
+=======
+      "static/css/app/settings/page.css",
+      "static/chunks/app/settings/page.js"
+>>>>>>> 288f8bcb7e4f08cf8cbe72ee90f09078ba811e93
     ]
   }
 }

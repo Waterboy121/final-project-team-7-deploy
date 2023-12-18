@@ -55,7 +55,7 @@ export default function Settings() {
 					/>
 					<p style={{ fontWeight: "bold", color: "#FFFFFF" }}>
 						{" "}
-						{userInfo?.userName ? userInfo.userName : "Username not found"}
+						{userInfo.userName ? userInfo.userName : "Username not found"}
 					</p>
 				</span>
 			</div>
