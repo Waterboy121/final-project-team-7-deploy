@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
 
 const userSchema = mongoose.Schema(
+<<<<<<< HEAD
   {
     userName: {
       type: String,
@@ -21,6 +22,31 @@ const userSchema = mongoose.Schema(
   {
     timestamps: true,
   }
+=======
+	{
+		userName: {
+			type: String,
+			required: true,
+		},
+		email: {
+			type: String,
+			required: true,
+			unique: true,
+		},
+		password: {
+			type: String,
+			required: true,
+		},
+		playlist: {
+			type: [String], // Array of strings
+			required: true,
+			default: [], // Default value is an empty array
+		},
+	},
+	{
+		timestamps: true,
+	}
+>>>>>>> 6e59b81 (Fixed logout, and implemented settings)
 );
 
 userSchema.pre("save", async function (next) {

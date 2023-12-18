@@ -1,0 +1,109 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100vh;
+	width: 90vw;
+	padding-top: 25px;
+}
+
+.header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100%;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+.body {
+	display: flex;
+	flex-direction: row;
+	height: 80%;
+	width: 100%;
+	margin-top: 40px;
+}
+
+.toolbar {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	border-right: 1px solid grey;
+	width: 20%;
+	gap: 50px;
+}
+
+.toolbarGroup1 {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.toolbarGroup2 {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.optionHeader {
+	font-size: 1.75rem;
+	margin-bottom: 10px;
+	color: #e8e8e8;
+}
+
+.option {
+	display: flex;
+	font-size: 1.25rem;
+	color: #9b9b9b;
+	align-items: center;
+	gap: 10px;
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	height: 100%;
+	padding-left: 50px;
+}
+
+.icon {
+	position: relative;
+	left: 40px;
+	top: 16px;
+	transform: translateY(-50%);
+}
+
+.settingsPane {
+	color: white;
+	align-items: center;
+	display: grid;
+	flex-direction: column;
+	font-size: 1.5rem;
+}
+
+.settingsPicture {
+	height: 250px;
+	width: 250px;
+	padding: 10px;
+	margin: auto;
+}
+
+.settingsText {
+	display: grid;
+	grid-template-columns: 0.25fr 0.5fr;
+	gap: 15px;
+	grid-auto-rows: minmax(50px, auto);
+	margin-top: 5rem;
+}
+
+.settingsButton {
+	background-color: #ffb703;
+	color: black;
+	margin: auto;
+	width: 7rem;
+	height: 4rem;
+	border-radius: 5%;
+	font-weight: 1000;
+	border-width: 3px;
+}
