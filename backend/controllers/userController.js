@@ -100,9 +100,9 @@ const updateUserProfile = asyncHandler(async (req, res) => {
 });
 
 const searchHandler = asyncHandler(async (req, res) => {
-  var Client_ID = "b22d93d0ae984f7f859da670d656b24a";
+ var Client_ID = process.env.CLIENT_ID;
 
-  var Client_Secret = "cd35cb20f7fb45ba97e5e8684f669a79";
+  var Client_Secret = process.env.CLIENT_SECRET;
   const generateToken = async () => {
     var authParameters = {
       method: "POST",
@@ -159,8 +159,9 @@ const searchHandler = asyncHandler(async (req, res) => {
 
 const playlistHandler = asyncHandler(async (req, res) => {
 	let playlist = req.body.playlist
-	var Client_ID = "b22d93d0ae984f7f859da670d656b24a";
-	var Client_Secret = "cd35cb20f7fb45ba97e5e8684f669a79";
+	var Client_ID = process.env.CLIENT_ID;
+
+  var Client_Secret = process.env.CLIENT_SECRET;
 	
 	const generateToken = async () => {
 		var authParameters = {
