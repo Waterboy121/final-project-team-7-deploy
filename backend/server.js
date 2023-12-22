@@ -3,22 +3,11 @@ import dotemv from "dotenv";
 import userRoutes from "./routes/userRoutes.js";
 import morgan from "morgan";
 import cors from "cors";
-import path from "path";
 
 dotemv.config();
 import cookieParser from "cookie-parser";
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 import connectDB from "./config/db.js";
-
-if (process.env.NODE_ENV === "production") {
-  const _dirname = path.resolve();
-  app.use(express.static(path.join(__dirname, "frontend")));
-  app.get("*", (req, res) =>
-    res.sendFile(path.resolve(__dirname, "frontend,", "index.html"))
-  );
-} else {
-  app.get("/", (req, res) => res.send("Server is ready"));
-}
 
 const port = process.env.SERVER_PORT || 3000;
 
